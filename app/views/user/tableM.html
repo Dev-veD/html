@@ -1,0 +1,58 @@
+ <!-- DATA TABLE-->
+ <section class="p-t-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="table-responsive table--no-card m-b-30">
+                    <table class="table table-top-campaign">
+                        <thead class="bg-secondary text-light">
+                            <tr>
+                                <a href="#" data-toggle="modal" data-target="#largeModal"><th class="text-center">District</th></a>
+                                <th class="text-center">Confirmed</th>
+                                <th class="text-center">Recovered</th>
+                                <th class="text-center">Deceased</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php foreach($data['table'] as $entity){
+                               echo ' 
+                            <tr>
+                                <td class="text-center"><a id="'.$entity->district.'" class="clicker" data-toggle="modal" data-target="#largeModal">'.$entity->district.'</a></td>
+                                <td class="text-center"><a data-toggle="modal" data-target="#largeModal">'.$entity->confirmed.'</a></td>
+                                <td class="text-center">'.$entity->recovered.'</td>
+                                <td class="text-center">'.$entity->deceased.'</a></td>
+                            </tr>';
+                        }?>
+
+                        </tbody>
+                    </table>
+                   
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="au-card au-card--bg-blue au-card-top-countries m-b-30">
+                    <div class="au-card-inner">
+                        <div class="table-responsive">
+                            <table class="table table-top-countries">
+                                <b><p style="color:azure">Notification</p></b>
+                                <tbody>
+                                   <?php
+                                    foreach ($data['notices'] as $val)
+                                   {
+                                    echo '<tr>
+                                        <td><a href="#Downloadlink"><span style="color:azure">'.$val->name.'</span></a></td></tr>';
+                                   }?>
+                                </tbody>
+                            </table>
+                            <a href="#" style="color:azure">more..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END DATA TABLE-->
+
